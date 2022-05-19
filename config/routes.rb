@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'pages/landing'
-  get 'pages/squeeze'
-  get 'pages/payment'
-  get 'pages/confirmation'
-  get 'pages/legals'
+  get 'pages/landing', as: "landing"
+  get 'pages/squeeze', as: "squeeze"
+  get 'pages/payment', as: "payment"
+  get 'pages/confirmation', as: "confirmation"
+  get 'pages/legals', as: "legals"
   resources :contents
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

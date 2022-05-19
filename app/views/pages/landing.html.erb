@@ -1,2 +1,11 @@
-<h1>Pages#landing</h1>
-<p>Find me in app/views/pages/landing.html.erb</p>
+<div class="hero">
+  <div class="vsl">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/uBIqajHFvK4?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="title h1 fw-bold">
+    <%= @title %>
+  </div>
+  <div class="cta">
+    <%= link_to @cta, squeeze_url, class: "btn btn-lg btn-primary" %>
+  </div>
+</div>

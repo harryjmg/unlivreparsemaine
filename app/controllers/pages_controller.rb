@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_action :set_content
+
   def landing
   end
 
@@ -12,5 +14,11 @@ class PagesController < ApplicationController
   end
 
   def legals
+  end
+
+  def set_content
+    content = Content.find_by(page: action_name)
+    @title = content.title
+    @cta = content.cta
   end
 end
