@@ -1,54 +1,77 @@
 @import "bootstrap";
 
 body {
+  overflow: initial;
+  background-image: url(https://assets.clickfunnels.com/images/grey-bloom.png);
+  background-size: cover !important;
+  -webkit-background-size: cover !important;
+  background-attachment: fixed !important;
+  background-repeat: repeat repeat !important;
+  background-position: center center;
+}
+
+.container-sm {
+  max-width: 810px;
+}
+
+.landing-segment {
+  margin-top: 30px;
+  border-color: rgba(47, 47, 47, 0.439216);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  outline: none;
+  background-color: rgb(255, 255, 255);
+
+  border-width: 1px;
+  border-style: solid;
+
+  border-radius: 10px;
+
+
+  max-width: 960px;
+  width: 100%;
+
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+  display: block;
+}
+
+.landing-video {
+  box-shadow: 0 1px 5px #787878;
+}
+
+.landing-cta {
+  margin-top: 30px;
+  outline: none;
   text-align: center;
-}
-
-.heading-2 {
-  text-transform: capitalize;
-  font-size: 2.7em;
-}
-
-.title {
-  text-align: center;
-  margin-top: 3rem;
-}
-
-.cta {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.hero {
-  padding-top: 6rem;
-  max-width: 780px;
-  margin: 0 auto;
-}
-
-.vsl {
-  box-shadow: black 0px 5px 15px;
-  max-width: 840px;
-  margin: 0 auto;
-}
-
-.sub-vsl {
-  max-width: 840px;
-  margin: 0 auto;
-  font-family: 'Avenir', 'Arial';
-  font-size: 1.1rem;
-}
-
-.elementor-shape {
-    overflow: hidden;
-    position: absolute;
-    left: 0;
+  position: relative;
+  a {
     width: 100%;
-    line-height: 0;
-    direction: ltr;
-    transform: rotate(180deg);
-    bottom: -1px;
+    border: 1px solid rgba(0,0,0,0.1);
+    color: rgb(109, 56, 5);
+    background-color: rgb(255, 212, 61);
+    background-image: linear-gradient(to bottom,rgb(255,212,61) 0%,#ffcb14 100%);
+    box-shadow: 0 1px 5px rgb(225, 225, 225), inset 0 0 0 2px rgb(225, 225, 225);
+    font-size: 27px;
+    padding: 13px 35px;
+    font-weight: bold;
+    text-decoration: none;
+  }
 }
 
-.elementor-shape-fill {
-  fill: #009FFD2B;
+.footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  outline: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  color: rgba(47, 47, 47, 0.8);
+  font-size: 14px;
+  a {
+    color: rgb(18,101,146);
+    text-decoration: none;
+  }
 }
