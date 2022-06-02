@@ -1,14 +1,121 @@
-<% content_for(:html_title) { 'Bienvenue' } %>
+<% content_for(:html_title) { 'Accueil' } %>
 
-<div class="landing-segment">
-  <div class="container-sm">
+<style>
+  html {
+    background-color: #ffd383;
+  }
+  .product-box {
+    border: 3px solid white;;
+  }
 
-    <div class="landing-video">
-      <script src="https://fast.wistia.com/embed/medias/mbnr7xqt2z.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_mbnr7xqt2z videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/mbnr7xqt2z/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>
+  /* general styling */
+  :root {
+    --smaller: .75;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+</style>
+
+<script type="text/javascript">
+  (function () {
+  const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+  //I'm adding this section so I don't have to keep updating this pen every year :-)
+  //remove this if you don't need it
+  let today = new Date(),
+      dd = String(today.getDate()).padStart(2, "0"),
+      mm = String(today.getMonth() + 1).padStart(2, "0"),
+      yyyy = today.getFullYear(),
+      nextYear = yyyy + 1,
+      dayMonth = "06/20/",
+      birthday = dayMonth + yyyy;
+
+  today = mm + "/" + dd + "/" + yyyy;
+  if (today > birthday) {
+    birthday = dayMonth + nextYear;
+  }
+  //end
+
+  const countDown = new Date(birthday).getTime(),
+      x = setInterval(function() {
+
+        const now = new Date().getTime(),
+              distance = countDown - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / (day)),
+          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+        //do something later when date is reached
+        if (distance < 0) {
+          document.getElementById("headline").innerText = "It's my birthday!";
+          document.getElementById("countdown").style.display = "none";
+          document.getElementById("content").style.display = "block";
+          clearInterval(x);
+        }
+        //seconds
+      }, 0)
+  }());
+</script>
+
+<div class="container">
+  <main id="page1">
+    <div>
+      <%= image_tag "harry.png", class: "harry_jmg", style: "border: white 3px solid; border-radius: 50%;" %>
+      <div class="title">
+       Devenez 1% meilleurs chaque semaine grâce aux meilleures connaissances de la 🌍
+      </div>
+      <div class="subtitle">
+        Reçois chaque semaine un condensé des meilleurs livres sur ces 5 thèmes : <br class="hide-mobile">la spiritualité, la psychologie, les finances, la productivité et la philosophie.
+      </div>
     </div>
-    <div class="landing-cta">
-      <%= link_to "Rejoindre l'aventure", payment_path, class: "btn" %>
+    <div class="container-countdown">
+      <div class="container">
+        <h1 id="headline">Décompte avant lancement</h1>
+        <div id="countdown">
+          <ul>
+            <li><span id="days"></span>jours</li>
+            <li><span id="hours"></span>heures</li>
+            <li><span id="minutes"></span>Minutes</li>
+            <li><span id="seconds"></span>secondes</li>
+          </ul>
+        </div>
+        <div id="content" class="emoji">
+          <span>🥳</span>
+          <span>🎉</span>
+          <span>🎂</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="newsletter product-box">
+        <form id="sib-form" method="POST" action="https://1265cdd2.sibforms.com/serve/MUIEAHaKgW6IWkYUwHLAqCsBf5uZHlC11tI17LU5o09gVeGLNtYwIHFq9guR4hMDv-VaITBG5V_pv4177747yTuYY8fDLt3DiySNJzmImEsYh0kJSha6aYKkwM7it750QT_m2puatKVPCyUcW2eRJ7IkQYxkD0gim7AhOhsEnt1WpJ_jq1gIK5Aj0LuXwVYuKWOJYRIjI0cZDwkT">
+          <div class="_form-content">
+            <div class="_form_element _x18687261 _full_width ">
+              <input class="input" maxlength="200" type="text" id="PRENOM" name="PRENOM"  placeholder="Prénom" data-required="true" required />
+              <input class="input" type="text" id="EMAIL" name="EMAIL" placeholder="Adresse email" data-required="true" required />
+            </div>
+            <div class="_button-wrapper _full_width">
+              <%= link_to "JE M'INSCRIS AU PRÉ-LANCEMENT*", presentation_path, class: "button-block", style: "margin-bottom:16px" %>
+              <!-- <button id="_form_1_submit" class="button-block" form="sib-form" type="submit" style="margin-bottom:16px">
+                JE PARTICIPE AU LANCEMENT
+              </button> -->
+
+            </div>
+            <div class="_clear-element">
+            </div>
+          </div>
+        </form>
+      </span>
+      <p class="small-notice">(*) : Participer au pré-lancement vous donnera accès à une grosse réduction, à une avant-première et à un bonus spécial.</p>
     </div>
 
-  </div>
+  </main>
 </div>

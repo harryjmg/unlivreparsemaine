@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'pages/landing', as: "landing"
+  get 'presentation', to: "pages#presentation", as: "presentation"
   get 'pages/squeeze', as: "squeeze"
   get 'pages/payment', as: "payment"
   get 'pages/confirmation', as: "confirmation"
