@@ -96,23 +96,19 @@
     </div>
     <div>
       <span class="newsletter product-box">
-        <form id="sib-form" method="POST" action="https://1265cdd2.sibforms.com/serve/MUIEAHaKgW6IWkYUwHLAqCsBf5uZHlC11tI17LU5o09gVeGLNtYwIHFq9guR4hMDv-VaITBG5V_pv4177747yTuYY8fDLt3DiySNJzmImEsYh0kJSha6aYKkwM7it750QT_m2puatKVPCyUcW2eRJ7IkQYxkD0gim7AhOhsEnt1WpJ_jq1gIK5Aj0LuXwVYuKWOJYRIjI0cZDwkT">
+        <%= form_with model: @prospect do |form| %>
           <div class="_form-content">
-            <div class="_form_element _x18687261 _full_width ">
-              <input class="input" maxlength="200" type="text" id="PRENOM" name="PRENOM"  placeholder="Prénom" data-required="true" required />
-              <input class="input" type="text" id="EMAIL" name="EMAIL" placeholder="Adresse email" data-required="true" required />
+            <div class="_form-element _x18687261 _full_width">
+              <%= form.text_field :name, placeholder: "Prénom" %>
+              <%= form.email_field :email, placeholder: "Adresse email" %>
             </div>
             <div class="_button-wrapper _full_width">
-              <%= link_to "JE M'INSCRIS AU PRÉ-LANCEMENT*", presentation_path, class: "button-block", style: "margin-bottom:16px" %>
-              <!-- <button id="_form_1_submit" class="button-block" form="sib-form" type="submit" style="margin-bottom:16px">
-                JE PARTICIPE AU LANCEMENT
-              </button> -->
-
-            </div>
-            <div class="_clear-element">
+              <%= form.submit "JE M'INSCRIS AU PRÉ-LANCEMENT*", class: "button-block", style: "margin-bottom:16px; width: -webkit-fill-available;" %>
             </div>
           </div>
-        </form>
+        <% end %>
+
+
       </span>
       <p class="small-notice">(*) : Participer au pré-lancement vous donnera accès à une grosse réduction, à une avant-première et à un bonus spécial.</p>
     </div>

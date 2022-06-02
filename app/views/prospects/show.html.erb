@@ -14,10 +14,15 @@
     <div>
       <%= image_tag "harry.png", class: "harry_jmg", style: "border: white 3px solid; border-radius: 50%;" %>
       <div class="title">
-       Merci !
+       Merci, <%= @prospect.name %> !
+      </div>
+      <p>Adresse enregistrée : <%= @prospect.email %></p>
+
+      <div class="subtitle" style="margin-bottom:0.5rem">
+        <span style="text-decoration: line-through">Votre</span> Ton (on peut se tutoyer non ?) inscription à la liste de pré-lancement est validée. <br class="hide-mobile">Merci de ton soutien pour ce nouveau projet et à très vite dans ta boîte mail !
       </div>
       <div class="subtitle">
-        <span style="text-decoration: line-through">Votre</span> Ton (on peut se tutoyer non ?) inscription à la liste de pré-lancement est validée <br class="hide-mobile">Merci de ton soutien pour ce nouveau projet et à très vite dans ta boîte mail !
+        - Harry
       </div>
     </div>
     <p class="small-notice">Pour être certain de me recevoir, ajoute harry@unlivreparsemaine.fr à tes contacts.</p>
