@@ -22,9 +22,10 @@ class ProspectsController < ApplicationController
   # POST /prospects or /prospects.json
   def create
     @prospect = Prospect.new(prospect_params)
+    @prospect = Prospect.find_by(email: @prospect.email) || @prospect.save
 
     respond_to do |format|
-      if @prospect.save
+      if @prospect
         format.html { redirect_to prospect_url(@prospect), notice: "Prospect was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
