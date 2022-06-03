@@ -24,7 +24,7 @@ class ProspectsController < ApplicationController
     @prospect = Prospect.new(prospect_params)
 
     respond_to do |format|
-      if verify_recaptcha(model: @prospect) && (@prospect.save || @prospect = Prospect.find_by(email: @prospect.email))
+      if @prospect.save
         format.html { redirect_to prospect_url(@prospect), notice: "Prospect was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }

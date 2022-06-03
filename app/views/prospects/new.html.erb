@@ -21,6 +21,14 @@
   .g-recaptcha {
     display:none;
   }
+
+  .error_msg {
+    font-size: smaller;
+    margin-top: -1rem;
+    text-align: left;
+    margin-left: 16px;
+    color: #a01a1a;
+  }
 </style>
 
 <script type="text/javascript">
@@ -104,11 +112,16 @@
           <div class="_form-content">
             <div class="_form-element _x18687261 _full_width">
               <%= form.text_field :name, placeholder: "Prénom" %>
+              <% if @prospect.errors[:name].present? %>
+                <p class="error_msg"><%= @prospect.errors[:name][0]%></p>
+              <% end %>
               <%= form.email_field :email, placeholder: "Adresse email" %>
-              <%= invisible_recaptcha_tags %>
+              <% if @prospect.errors[:email].present? %>
+                <p class="error_msg"><%= @prospect.errors[:email][0]%></p>
+              <% end %>
             </div>
             <div class="_button-wrapper _full_width">
-              <%= form.submit "JE ME PRÉ-INSCRIS MAINTENANT *", class: "button-block", style: "margin-bottom:16px; width: -webkit-fill-available;" %>
+              <%= form.submit "JE ME PRÉ-INSCRIS MAINTENANT *", id: "submit-btn", class: "button-block", style: "margin-bottom:16px; width: -webkit-fill-available;" %>
             </div>
           </div>
         <% end %>
