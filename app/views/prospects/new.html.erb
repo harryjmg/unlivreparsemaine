@@ -17,6 +17,10 @@
     height: 100%;
     margin: 0;
   }
+
+  .g-recaptcha {
+    display:none;
+  }
 </style>
 
 <script type="text/javascript">
@@ -101,6 +105,7 @@
             <div class="_form-element _x18687261 _full_width">
               <%= form.text_field :name, placeholder: "Prénom" %>
               <%= form.email_field :email, placeholder: "Adresse email" %>
+              <%= invisible_recaptcha_tags %>
             </div>
             <div class="_button-wrapper _full_width">
               <%= form.submit "JE ME PRÉ-INSCRIS MAINTENANT *", class: "button-block", style: "margin-bottom:16px; width: -webkit-fill-available;" %>
