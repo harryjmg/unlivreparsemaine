@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 @import "countdown";
 
-$primary: #c7e8ff;
-$secondary: #afdeff;
+$primary: #95c0ff;
+$secondary: #7ab0ff;
 
 html{
     margin: 0;
     padding:0;
+    background: #f7f6f1;
 }
 
 body{
@@ -15,7 +16,7 @@ body{
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
-    color: #202124;
+    color: #1f4d8f;
     margin:0px;
 }
 
@@ -271,7 +272,7 @@ h1::first-letter{
 }
 
 .small-notice {
-  color: #272727;
+  color: #1f4d8f;
   margin-top: 0;
   padding-bottom: 4rem;
 }
@@ -352,7 +353,7 @@ h1::first-letter{
         font-size: 39px;
         line-height: 58.5px;
         margin: 27px auto 24px auto;
-        font-weight: 700;
+        font-weight: lighter;
         width:800px;
         padding:5px;
     }
@@ -361,7 +362,7 @@ h1::first-letter{
         font-size: 18px;
         line-height: 27px;
         margin: 0 auto 56px auto;
-        font-weight: 500;
+        font-weight: lighter;
         width:698px;
         padding:5px;
     }
@@ -371,7 +372,7 @@ h1::first-letter{
         width:333px;
         height: 354px;
         border-radius: 10px;
-        border: 1px solid #E4E4E4;
+        border: 1px solid #234f8f70;
         margin-right:16px;
         margin-left:16px;
         box-sizing: border-box;
@@ -592,7 +593,7 @@ h1::first-letter{
         font-size: 33px;
         line-height: 49.5px;
         margin: 32px auto 0px auto;
-        font-weight: 700;
+        font-weight: lighter;
         /* padding:20px; */
         padding-bottom:0px;
     }
@@ -601,7 +602,7 @@ h1::first-letter{
         font-size: 18px;
         line-height: 27px;
         margin: 0 auto 0px auto;
-        font-weight: 500;
+        font-weight: lighter;
         padding:15px;
     }
 
