@@ -29,8 +29,6 @@
         hour = minute * 60,
         day = hour * 24;
 
-  //I'm adding this section so I don't have to keep updating this pen every year :-)
-  //remove this if you don't need it
   let today = new Date(),
       dd = String(today.getDate()).padStart(2, "0"),
       mm = String(today.getMonth() + 1).padStart(2, "0"),
@@ -43,7 +41,6 @@
   if (today > birthday) {
     birthday = dayMonth + nextYear;
   }
-  //end
 
   const countDown = new Date(birthday).getTime(),
       x = setInterval(function() {
@@ -58,12 +55,11 @@
 
         //do something later when date is reached
         if (distance < 0) {
-          document.getElementById("headline").innerText = "It's my birthday!";
+          document.getElementById("headline").innerText = "Aujourd'hui est le jour J !";
           document.getElementById("countdown").style.display = "none";
           document.getElementById("content").style.display = "block";
           clearInterval(x);
         }
-        //seconds
       }, 0)
   }());
 </script>
@@ -71,7 +67,7 @@
 <div class="container">
   <main id="page1">
     <div>
-      <%= image_tag "harry.png", class: "harry_jmg", style: "border: white 3px solid; border-radius: 50%;" %>
+      <%= image_tag "harry.png", class: "harry_jmg" %>
       <div class="title">
        Devenez 1% meilleurs chaque semaine grâce aux meilleures connaissances de la 🌍
       </div>
