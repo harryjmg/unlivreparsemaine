@@ -1,18 +1,9 @@
 <% content_for(:html_title) { 'Merci' } %>
 
-<style>
-  html {
-    background-color: #ffd383;
-  }
-  .product-box {
-    border: 3px solid white;;
-  }
-</style>
-
 <div class="container">
   <main id="page1">
     <div>
-      <%= image_tag "harry.png", class: "harry_jmg", style: "border: white 3px solid; border-radius: 50%;" %>
+      <%= image_tag "harry.png", class: "harry_jmg" %>
       <div class="title">
        Merci, <%= @prospect.name %> !
       </div>

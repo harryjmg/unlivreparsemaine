@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 @import "countdown";
+@import "rating";
 
 $primary: #95c0ff;
 $secondary: #7ab0ff;
+
+.book-author {
+    font-size: 0.5em;
+    line-height: normal;
+    opacity: 0.5;
+}
 
 html{
     margin: 0;
@@ -354,7 +361,6 @@ h1::first-letter{
         line-height: 58.5px;
         margin: 27px auto 24px auto;
         font-weight: lighter;
-        width:800px;
         padding:5px;
     }
 
