@@ -1,7 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for?(:html_title) ? (yield(:html_title) + " | Un livre par semaine") : "Un livre par semaine" %></title>
+      <!-- Primary Meta Tags -->
+    <title><%= content_for?(:html_title) ? (yield(:html_title) + " | Un livre par semaine") : "Lisez un nouveau livre inspirant chaque semaine" %></title>
+    <meta name="title" content="Lisez un nouveau livre inspirant chaque semaine">
+    <meta name="description" content="Devenez 1% meilleurs chaque semaine grâce aux meilleures connaissances de la Terre 🌍. Recevez chaque semaine un condensé des meilleurs livres sur un thème inspirant.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unlivreparsemaine.fr/">
+    <meta property="og:title" content="Lisez un nouveau livre inspirant chaque semaine">
+    <meta property="og:description" content="Devenez 1% meilleurs chaque semaine grâce aux meilleures connaissances de la Terre 🌍. Recevez chaque semaine un condensé des meilleurs livres sur un thème inspirant.">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://unlivreparsemaine.fr/">
+    <meta property="twitter:title" content="Lisez un nouveau livre inspirant chaque semaine">
+    <meta property="twitter:description" content="Devenez 1% meilleurs chaque semaine grâce aux meilleures connaissances de la Terre 🌍. Recevez chaque semaine un condensé des meilleurs livres sur un thème inspirant.">
+    <meta property="twitter:image" content="">
+    
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
