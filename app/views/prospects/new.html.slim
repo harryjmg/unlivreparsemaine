@@ -1,0 +1,107 @@
+css:
+  /!* general styling */
+  root {:
+    --smaller: .75;
+  | }
+
+  | html, body {
+    | height: 100%;
+    | margin: 0;
+  | }
+
+  .g-recaptcha {
+    | display:none;
+  | }
+
+  .error_msg {
+    | font-size: smaller;
+    | margin-top: -1rem;
+    | text-align: left;
+    | margin-left: 16px;
+    | color: #a01a1a;
+  | }
+javascript:
+  | (function () {
+  | const second = 1000,
+        | minute = second * 60,
+        | hour = minute * 60,
+        | day = hour * 24;
+
+  | let today = new Date(),
+      | dd = String(today.getDate()).padStart(2, "0"),
+      | mm = String(today.getMonth() + 1).padStart(2, "0"),
+      | yyyy = today.getFullYear(),
+      | nextYear = yyyy + 1,
+      | dayMonth = "07/01/",
+      | birthday = dayMonth + yyyy;
+
+  | today = mm + "/" + dd + "/" + yyyy;
+  | if (today > birthday) {
+    | birthday = dayMonth + nextYear;
+  | }
+
+  | const countDown = new Date(birthday).getTime(),
+      | x = setInterval(function() {
+
+        | const now = new Date().getTime(),
+              | distance = countDown - now;
+
+        | document.getElementById("days").innerText = Math.floor(distance / (day)),
+          | document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+          | document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+          | document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+        /!/do something later when date is reached
+        | if (distance < 0) {
+          | document.getElementById("headline").innerText = "Aujourd'hui est le jour J !";
+          | document.getElementById("countdown").style.display = "none";
+          | document.getElementById("content").style.display = "block";
+          | clearInterval(x);
+        | }
+      | }, 0)
+  | }());
+.container
+  main#page1
+    div
+      = image_tag "harry.png", class: "harry_jmg"
+      .title
+        | Devenez 1% meilleurs chaque semaine grâce aux meilleures connaissances de la 🌍
+      .subtitle
+        | Reçois chaque semaine un condensé des meilleurs livres sur ces 5 thèmes :
+        = succeed "la" do
+          br.hide-mobile/
+    .container-countdown
+      .container
+        h1#headline Fin du pré-lancement dans :
+        #countdown
+          ul
+            li
+              span#days
+              | jours
+            li
+              span#hours
+              | heures
+            li
+              span#minutes
+              | Minutes
+            li
+              span#seconds
+              | secondes
+        #content.emoji
+          span 🥳
+          span 🎉
+          span 🎂
+    div
+      span.newsletter.product-box
+        = form_with model: @prospect do |form|
+          ._form-content
+            ._form-element._x18687261._full_width
+              = form.text_field :name, placeholder: "Prénom"
+              - if @prospect.errors[:name].present?
+                p.error_msg= @prospect.errors[:name][0]
+              = form.email_field :email, placeholder: "Adresse email"
+              - if @prospect.errors[:email].present?
+                p.error_msg= @prospect.errors[:email][0]
+            ._button-wrapper._full_width
+              = form.submit "JE PARTICIPE AU PRÉ-LANCEMENT *", id: "submit-btn", class: "button-block", style: "margin-bottom:16px; width: -webkit-fill-available;"
+      p.small-notice (*) : Participer au pré-lancement vous donnera accès à une grosse réduction, à une avant-première et à un bonus spécial.

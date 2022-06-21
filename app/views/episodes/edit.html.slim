@@ -1,0 +1,7 @@
+h1 Editing episode
+= render "form", episode: @episode
+br/
+div
+  = link_to "Show this episode", @episode
+  | \
+  | \#{link_to "Back to episodes", episodes_path}

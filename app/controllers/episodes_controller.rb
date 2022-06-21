@@ -1,4 +1,5 @@
 class EpisodesController < ApplicationController
+  layout "episodes"
   http_basic_authenticate_with name: ENV["ADMIN_USERNAME"], password: ENV["ADMIN_PASSWORD"], except: :show
   before_action :set_episode, only: %i[ show edit update destroy ]
 

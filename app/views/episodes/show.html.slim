@@ -1,0 +1,19 @@
+- content_for(:html_title) { @episode.title }
+.container
+  = render "partials/header", landing: true
+  main
+    div
+      .title
+        = @episode.title
+        .book-author
+          = @episode.book_author
+      .subtitle
+        = @episode.description
+    .episode-title
+      h1 Les notes :
+    .episode-audio
+      = @episode.episode_url.html_safe
+    div
+    .episode-content
+      h1.episode-title Les notes :
+      = @episode.content

@@ -1,0 +1,24 @@
+@import "application";
+
+.episode-content {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 3em;
+    margin-bottom: 4em;
+    
+}
+
+.episode-title {
+    font-size: 2em;
+    font-weight: lighter;
+    margin-bottom: 0.6em;
+}
+
+.trix-content {
+    background: white;
+    border-radius: 15px;
+    padding: 2em 2em;
+    border: solid 1px #d7d7d7;
+    box-shadow: #d6d6d6 0px 0px 10px 0px;
+}
