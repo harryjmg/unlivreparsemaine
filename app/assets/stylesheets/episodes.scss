@@ -1,0 +1,63 @@
+@import "application";
+
+.book-author {
+    font-size: 0.5em;
+    line-height: normal;
+    opacity: 0.5;
+}
+
+.section-head {
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: x-large;
+    font-weight: lighter;
+    margin-bottom: 0.6em;
+
+    &.notes {
+        margin-top: 2em;
+    }
+}
+
+.section-content {
+    &.audio {
+        max-width: 950px;
+        margin: 0 auto;
+    }
+    &.notes {
+        text-align: left;
+        background: white;
+        padding: 2em 2em;
+        box-shadow: #d6d6d6 0px 0px 10px 0px;
+        margin-bottom: 5em;
+    }
+    &.audio-problem a {
+        color: #5c709b;
+        text-decoration: underline;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .section-content {
+        &.notes {
+            border-radius: 15px;
+            margin: 1em 1em 5em;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .subtitle {
+        margin-bottom: 30px !important;
+    }
+
+    .section-head {
+        margin-left: 2em;
+    }
+    
+    .section-content {
+        &.notes {
+            margin: 1em 0 5em;
+        }
+    }
+}

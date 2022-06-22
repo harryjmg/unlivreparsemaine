@@ -1,0 +1,17 @@
+- content_for(:html_title) { @episode.title }
+
+.container
+  = render "partials/header", minimal: true
+  main
+    .title
+      = @episode.title
+      .book-author= @episode.book_author
+    .subtitle= @episode.description
+    .section-head.audio Le résumé :
+.section-content.audio= @episode.episode_url.html_safe
+.container
+  main
+    .section-content.audio-problem
+      = link_to "Problème de lecture ?", @episode.episode_url
+    .section-head.notes Les notes :
+    .section-content.notes= render "episodes/notes", episode: @episode
