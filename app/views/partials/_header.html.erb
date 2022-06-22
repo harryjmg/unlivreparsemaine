@@ -1,0 +1,23 @@
+<header>
+  <div>
+    <span class="links hide-mobile pull-left" style="display:<%= defined?(landing) ? "none" : "block" %>">
+
+        <%= link_to "YouTube", "https://www.youtube.com/c/HarryJMG?sub_confirmation=1", target: "_blank" %>
+        <span class="gap"></span>
+    </span>
+    <span>
+        <%= link_to root_path do %>
+          <%= image_tag "harry.png", class: "logo" %>
+        <% end %>
+    </span>
+    <span>
+    <span class="links hide-mobile pull-right" style="display:<%= defined?(landing) ? "none" : "block" %>">
+        <span class="gap"></span>
+        <a href="https://www.skool.com/coding-accelerator">Se connecter</a>
+    </span>
+  </div>
+  <div class="show-mobile links" style="display:<%= defined?(landing) ? "none" : "block" %>">
+    <%= link_to "YouTube", "https://www.youtube.com/c/HarryJMG?sub_confirmation=1", target: "_blank" %>
+    <%= link_to "Se connecter", "https://www.skool.com/coding-accelerator" %>
+  </div>
+</header>

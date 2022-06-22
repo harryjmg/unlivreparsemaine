@@ -1,8 +1,0 @@
-p style=("color: green") = notice
-h1 Prospects
-#prospects
-  - @prospects.each do |prospect|
-    = render prospect
-    p
-      = link_to "Show this prospect", prospect
-= link_to "New prospect", new_prospect_path
