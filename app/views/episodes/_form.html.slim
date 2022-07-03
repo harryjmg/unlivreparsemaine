@@ -21,9 +21,9 @@
     = form.rich_text_area :content
   div
     = form.label :episode_url, style: "display: block"
-    = form.text_area :episode_url
+    = form.text_field :episode_url
   div
-    = form.label :average_rating, style: "display: block"
-    = form.number_field :average_rating
+    = form.label :episode_iframe, style: "display: block"
+    = form.text_area :episode_iframe
   div
-    = form.submit
+    = form.submit "Save", class: "button-block", style: "margin:0"

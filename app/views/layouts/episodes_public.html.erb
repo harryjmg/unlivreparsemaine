@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!-- Primary Meta Tags -->
+    <title><%= content_for?(:html_title) ? (yield(:html_title) + " | Un livre par semaine") : "Lisez un nouveau livre inspirant chaque semaine" %></title>
+    <meta name="title" content="Lisez un nouveau livre inspirant chaque semaine">
+    <meta name="description" content="Devenez 1% meilleurs chaque semaine grâce aux meilleures connaissances de la Terre 🌍. Recevez chaque semaine un condensé des meilleurs livres sur un thème inspirant.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unlivreparsemaine.fr/">
+    <meta property="og:title" content="Lisez un nouveau livre inspirant chaque semaine">
+    <meta property="og:description" content="Devenez 1% meilleurs chaque semaine grâce aux meilleures connaissances de la Terre 🌍. Recevez chaque semaine un condensé des meilleurs livres sur un thème inspirant.">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://unlivreparsemaine.fr/">
+    <meta property="twitter:title" content="Lisez un nouveau livre inspirant chaque semaine">
+    <meta property="twitter:description" content="Devenez 1% meilleurs chaque semaine grâce aux meilleures connaissances de la Terre 🌍. Recevez chaque semaine un condensé des meilleurs livres sur un thème inspirant.">
+    <meta property="twitter:image" content="">
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <%= stylesheet_link_tag "episodes_public", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W757ZXW');</script>
+    <!-- End Google Tag Manager -->
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W757ZXW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <%= yield %>
+    <%= render "partials/footer" %>
+  </body>
+</html>

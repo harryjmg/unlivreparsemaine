@@ -1,5 +1,10 @@
-h1 New episode
-= render "form", episode: @episode
-br/
-div
-  = link_to "Back to episodes", episodes_path
+.container
+  = render "partials/header", minimal: true
+  main
+    .section-head.notes Nouvel épisode :
+    .section-content.notes
+      = render "form", episode: @episode
+      br/
+      div
+        = link_to "Back to episodes", episodes_path
+

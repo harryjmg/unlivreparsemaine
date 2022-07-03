@@ -1,10 +1,21 @@
 .container
   = render "partials/header", minimal: true
   main
-    h1 Episodes
-    #episodes
-      - @episodes.each do |episode|
-        = render episode
-        p
-          = link_to "Show this episode", episode
-    = link_to "New episode", new_episode_path
+    .section-head.notes Les épisodes :
+    .section-content.notes
+      table.rwd-table
+        tr
+          th Titre du livre
+          th Auteur
+          th Date
+          th Modifier
+        - @episodes.each do |episode|
+          tr
+            td data-th="Titre du livre"
+              = link_to episode.title, episode_path(episode)
+            td data-th="Auteur"
+              = episode.book_author
+            td data-th="Date"
+              = episode.created_at.strftime("%d/%m/%Y")
+            td= link_to "Modifier", edit_episode_path(episode)
+      = link_to "Nouvel episode", new_episode_path, class: "button-block"

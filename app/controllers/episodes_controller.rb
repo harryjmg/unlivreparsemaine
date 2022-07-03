@@ -1,5 +1,5 @@
 class EpisodesController < ApplicationController
-  layout "episodes"
+  layout "episodes_admin", only: %i[ index new edit ]
   
   http_basic_authenticate_with name: ENV["ADMIN_USERNAME"], password: ENV["ADMIN_PASSWORD"], except: :show
   before_action :set_episode, only: %i[ show edit update destroy ]
@@ -11,6 +11,7 @@ class EpisodesController < ApplicationController
 
   # GET /episodes/1 or /episodes/1.json
   def show
+    render(:layout => "layouts/episodes_public")
   end
 
   # GET /episodes/new
@@ -68,6 +69,6 @@ class EpisodesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def episode_params
-      params.require(:episode).permit(:title, :description, :episode_url, :average_rating, :book_author, :content)
+      params.require(:episode).permit(:title, :description, :episode_url, :episode_iframe, :average_rating, :book_author, :content)
     end
 end
