@@ -9,9 +9,11 @@
     .subtitle= @episode.description
     .section-head.audio Le résumé :
 .section-content.audio= @episode.episode_iframe.html_safe
+
 .container
   main
     .section-content.audio-problem
       = link_to "Problème de lecture ?", @episode.episode_url
     .section-head.notes Les notes :
     .section-content.notes= render "episodes/notes", episode: @episode
+
