@@ -8,12 +8,12 @@
       .book-author= @episode.book_author
     .subtitle= @episode.description
     .section-head.audio Le résumé :
-.section-content.audio= @episode.episode_iframe.html_safe
-
+.section-content.audio
+  = @episode.episode_iframe.html_safe
+  = link_to "Problème de lecture ?", @episode.episode_url
 .container
   main
-    .section-content.audio-problem
-      = link_to "Problème de lecture ?", @episode.episode_url
+    = link_to "Se procurer ce livre", @episode.buy_url, class: "custom-btn btn-6"
     .section-head.notes Les notes :
     .section-content.notes= render "episodes/notes", episode: @episode
 
